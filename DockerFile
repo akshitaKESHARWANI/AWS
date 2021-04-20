@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-LABEL maintainer="callicoder@gmail.com"
+LABEL maintainer="akshita961225@gmail.com"
 
 # Add a volume pointing to /tmp
 VOLUME /tmp
