@@ -1,0 +1,4 @@
+FROM openjdk:8
+ADD target/spring-boot-crud-operation.jar spring-boot-crud-operation.jar
+EXPOSE 8081
+ENTRYPOINT ["java","jar","spring-boot-crud-operation.jar"]
