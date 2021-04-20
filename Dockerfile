@@ -1,12 +1,12 @@
-FROM openjdk:8
+#FROM openjdk:8
 
-LABEL maintainer="akshita961225@gmail.com"
+#LABEL maintainer="akshita961225@gmail.com"
 
 # Add a volume pointing to /tmp
-VOLUME /tmp
+#VOLUME /tmp
 
 # Make port 8080 available to the world outside this container
-EXPOSE 8080
+#EXPOSE 8080
 
 # The application's jar file
 #ARG JAR_FILE=target/spring-boot-crud-operation-0.0.1-SNAPSHOT.jar
@@ -18,5 +18,7 @@ EXPOSE 8080
 #ENTRYPOINT ["java","spring-boot-crud-operation.jar"]
 #ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-cp","/opt/app7:/opt/app7/lib/*","-Droot.dir=/opt/app7","com.bswen.app7.Main"]
 
-COPY ${JAR_FILE} my-app.jar
+FROM openjdk:8-jdk
+VOLUME /tmp
+COPY target/*.jar my-app.jar
 ENTRYPOINT ["java","-jar","/my-app.jar"]
