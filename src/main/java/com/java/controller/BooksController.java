@@ -18,6 +18,12 @@ public class BooksController
 //autowire the BooksService class
 @Autowired
 BooksService booksService;
+@GetMapping("/bookinfo")
+private String getMessage() 
+{
+return booksService.getMessage();
+}
+
 //creating a get mapping that retrieves all the books detail from the database 
 @GetMapping("/book")
 private List<Books> getAllBooks() 

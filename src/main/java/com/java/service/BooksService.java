@@ -12,6 +12,11 @@ public class BooksService
 {
 @Autowired
 BooksRepository booksRepository;
+public String getMessage() 
+{
+return "Welcome to the service";
+}
+
 //getting all books record by using the method findaAll() of CrudRepository
 public List<Books> getAllBooks() 
 {
