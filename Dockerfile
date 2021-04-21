@@ -20,5 +20,6 @@
 
 FROM openjdk:8-jdk
 VOLUME /tmp
-COPY target/*.jar my-app.jar
+COPY target/*.jar /my-app.jar
+
 ENTRYPOINT ["java","-jar","/my-app.jar"]
