@@ -53,7 +53,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finamName>Book</finalName>
+		<finamName>book</finalName>
 	</build>
 
 	<repositories>
