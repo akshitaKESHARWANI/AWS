@@ -20,11 +20,11 @@
 
 #FROM openjdk:8-jdk
 #VOLUME /tmp
-#COPY target/*.jar my-app.jar
-#ENTRYPOINT ["java","-jar","/my-app.jar"]
+#COPY target/spring-boot-crud-operation-0.0.1-SNAPSHOT.jar
+#ENTRYPOINT ["java","-jar","/spring-boot-crud-operation-0.0.1-SNAPSHOT.jar"]
 
 
 FROM openjdk:8
 EXPOSE 8080
-ADD target/myapp.jar myapp.jar 
-ENTRYPOINT ["java","-jar","/myapp.jar"]
+ADD ttarget/spring-boot-crud-operation-0.0.1-SNAPSHOT.jar
+#ENTRYPOINT ["java","-jar","/spring-boot-crud-operation-0.0.1-SNAPSHOT.jar"]
