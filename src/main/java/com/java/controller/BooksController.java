@@ -7,29 +7,36 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.java.model.Books;
 import com.java.service.BooksService;
 //mark class as Controller
+
 @RestController
 public class BooksController 
 {
 //autowire the BooksService class
 @Autowired
 BooksService booksService;
+
 @GetMapping("/bookinfo")
 private String getMessage() 
 {
-return booksService.getMessage();
+return "welcome to my service";
 }
 
+
 //creating a get mapping that retrieves all the books detail from the database 
-@GetMapping("/book")
-private List<Books> getAllBooks() 
-{
-return booksService.getAllBooks();
-}
+
+ @GetMapping("/book") 
+  private List<Books> getAllBooks() 
+  { return
+  booksService.getAllBooks();
+  }
+ 
 //creating a get mapping that retrieves the detail of a specific book
 @GetMapping("/book/{bookid}")
 private Books getBooks(@PathVariable("bookid") int bookid) 
