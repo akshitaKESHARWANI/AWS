@@ -18,7 +18,13 @@
 #ENTRYPOINT ["java","spring-boot-crud-operation.jar"]
 #ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-cp","/opt/app7:/opt/app7/lib/*","-Droot.dir=/opt/app7","com.bswen.app7.Main"]
 
-FROM openjdk:8-jdk
-VOLUME /tmp
-COPY target/*.jar my-app.jar
-ENTRYPOINT ["java","-jar","/my-app.jar"]
+#FROM openjdk:8-jdk
+#VOLUME /tmp
+#COPY target/*.jar my-app.jar
+#ENTRYPOINT ["java","-jar","/my-app.jar"]
+
+
+FROM openjdk:8
+EXPOSE 8080
+ADD target/myapp.jar myapp.jar 
+ENTRYPOINT ["java","-jar","/myapp.jar"]
