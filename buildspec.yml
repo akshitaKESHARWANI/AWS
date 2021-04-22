@@ -27,8 +27,11 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"order-service","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
+      #new step addedd
+      - mv target/* .jar book.jar
 artifacts:
   files:
    - imagedefinitions.json
-   - target/book.jar
+   #- target/book.jar
+   - book.jar
    
